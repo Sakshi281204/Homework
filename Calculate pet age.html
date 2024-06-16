@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Age Calculator</title>
+    <style>
+        .content{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+  <body>
+<div class="content">
+    <h1>Pet Age Calculator</h1>
+    <input type="number" id="pet-age" placeholder="Enter your pet's age">
+    <button onclick="calculatePetAge(document.getElementById('pet-age').value)">Calculate</button>
+    <p id="result"></p>
+</div>
+
+    <script>
+        function calculatePetAge(petAge) {
+  const petYears = petAge * 7;
+  const result = `Your Kitty is ${petYears} years old`;
+  document.getElementById("result").innerHTML = result;
+}
+</script>
+</body>
+</html>

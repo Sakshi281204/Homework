@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Season Box</title>
+  <style>
+    .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.box {
+  text-align: center;
+}
+
+.msg-box {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: none;
+  max-width: 500px;
+}
+
+.season-box {
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+.summer {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.winter {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.autumn {
+  background-color: #ff9900;
+  color: #fff;
+}
+
+.spring {
+  background-color: #8bc34a;
+  color: #fff;
+}
+
+#season-msg {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#season-img {
+  width: 500px;
+  height: 200px;
+  margin: 10px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="msg-box">
+        <p id="msg"></p>
+      </div>
+      <div class="season-box">
+        <select id="season-select" onchange="changeSeason()">
+          <option value="summer">Summer</option>
+          <option value="winter">Winter</option>
+          <option value="autumn">Autumn</option>
+          <option value="spring">Spring</option>
+        </select>
+        <button onclick="clickbutton">Submit</button>
+        <div id="season-msg" class="summer">
+          <img id="season-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgAjlITVcPHXTmEARcOwhJoFeZMQ2qWFwz3w&s"" alt="Summer">
+          <p id="season-text"></p>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    function clickbutton(){
+        /* const seasonSelect = document.getElementById("season-select");
+        const seasonMsg = document.getElementById("season-msg");
+        const seasonImg = document.getElementById("season-img");
+        const seasonText = document.getElementById("season-text");
+        const season = seasonSelect.value;
+        seasonMsg.className = season;
+        seasonText.innerHTML = `It's ${season}!`; */
+
+        
+    }
+    function changeSeason() {
+        const seasonSelect = document.getElementById("season-select");
+        const seasonMsg = document.getElementById("season-msg");
+        const seasonImg = document.getElementById("season-img");
+        const seasonText = document.getElementById("season-text");
+        const season = seasonSelect.value;
+        seasonMsg.className = season;
+        seasonText.innerHTML = `It's ${season}!`;
+
+  switch (season) {
+    case "summer":
+      seasonImg.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgAjlITVcPHXTmEARcOwhJoFeZMQ2qWFwz3w&s";
+      break;
+    case "winter":
+      seasonImg.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLP3dlx1um4C32CQqByGAtWE1-iXRxKBobCw&s";
+      break;
+    case "autumn":
+      seasonImg.src = "https://wallpapers.com/images/hd/autumn-season-980-x-980-picture-91pyi4l8cwiu6w9w.jpg";
+      break;
+    case "spring":
+      seasonImg.src = "https://st4.depositphotos.com/13349494/19626/i/450/depositphotos_196269276-stock-photo-close-shot-pink-cherry-blossom.jpg";
+      break;
+  }
+}
+  </script>
+</body>
+</html>
